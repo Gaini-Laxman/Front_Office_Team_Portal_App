@@ -27,7 +27,7 @@ public class UserController {
 	
 	
 	
-	@GetMapping("/forgetpassword")
+	@GetMapping("/forgetPassword")
 	public String forgetPassword() {
 		
 		return "forgetPassword";

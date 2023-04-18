@@ -14,7 +14,6 @@ import lombok.Data;
 public class EnquiryStatus {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer statusId;
 	private String statusName;
 }
