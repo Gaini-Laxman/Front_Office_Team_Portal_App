@@ -21,10 +21,10 @@ public class UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer userId;
-	private String username;
+	private String name;
 	private String email;
-	private Integer phno;
 	private String password;
+	private String phno;
 	private String accountStatus;
 	
 	@OneToMany(mappedBy = "user",  cascade = CascadeType.ALL, fetch = FetchType.EAGER)
