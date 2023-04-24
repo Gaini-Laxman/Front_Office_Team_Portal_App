@@ -6,13 +6,13 @@ import com.klinnovations.binding.UnlockForm;
 
 public interface UserService {
 	
-	public String login(LoginForm form);
-	
 	public boolean signUp(SignUpForm form);
 		
-	public String unlock(UnlockForm form);
+	public boolean unlockAccount(UnlockForm form);
 	
-    public String forgetPassword(String email);
+	public String login(LoginForm form);
+	
+    public boolean forgetPassword(String email);
     
     
     

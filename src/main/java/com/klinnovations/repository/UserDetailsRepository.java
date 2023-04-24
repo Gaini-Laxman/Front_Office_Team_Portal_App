@@ -7,4 +7,9 @@ public interface UserDetailsRepository extends JpaRepository<UserDetails, Intege
 	
 	public UserDetails findByEmail(String email);
 
+	public UserDetails findByEmailAndPassword(String email, String password);
+	
+	
+	
+
 }
