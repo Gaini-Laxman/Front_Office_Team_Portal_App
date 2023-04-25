@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="www.thymeleaf.org">
 
 <head>
 <meta charset="UTF-8" />
@@ -54,54 +54,56 @@
 								<div class="card-body p-md-5 mx-md-4">
 
 									<div class="text-center">
-										<h4 class="mt-1 mb-5 pb-1">Add Student Enquriy Here</h4>
+										<h4 class="mt-1 mb-5 pb-1">Add Student Enquiry Here</h4>
 									</div>
+									
+									<p th:text="${succMsg}" class="text-success" />
+									<p th:text="${errMsg}" class="text-danger" />
 
-									<form>
+									<form th:action="@{addEnquiry}" th:object="${formObj}" method="POST">
 										<div class="form-outline mb-4">
-											<input type="email" id="form2Example11" class="form-control"
-												placeholder="Student Name" /> <label class="form-label"
+											<input type="text" id="form2Example11" class="form-control"
+												placeholder="Student Name" th:field="*{studentName}" /> <label class="form-label"
 												for="form2Example11">Student Name</label>
 										</div>
 
 										<div class="form-outline mb-4">
-											<input type="email" id="form2Example22" class="form-control"
-												placeholder="Student Name" /> <label class="form-label"
+											<input type="number" id="form2Example22" class="form-control"
+												placeholder="Contact Number" th:field="*{studentPhno}" /> <label class="form-label"
 												for="form2Example22">Contact Number</label>
 										</div>
 
 										<div class="form-outline mb-4">
 											<label class="form-label" for="form2Example33">Class
-												Mode</label> <select id="form2Example33" class="form-select">
-												<option>-Select-</option>
-												<option>Online</option>
-												<option>Classroom</option>
+												Mode</label> 
+												
+												<select id="form2Example33" class="form-select" th:field="*{classMode}">
+												<option value="">-Select-</option>
+												<option value="online">Online</option>
+												<option value="classroom">Classroom</option>
 											</select>
 										</div>
 
 										<div class="form-outline mb-4">
 											<label class="form-label" for="form2Example44">Course</label>
-											<select id="form2Example44" class="form-select">
-												<option>-Select-</option>
-												<option selected>Java Fullstack</option>
-												<option>DevOps</option>
-												<option>AWS</option>
+											<select id="form2Example44" class="form-select" th:field="*{courseName}">
+												<option value="">-Select-</option>
+												<option th:each="course : ${courseNames}" th:value="${course}" th:text="${course}" ></option>
 											</select>
 										</div>
 										<div class="form-outline mb-4">
 											<label class="form-label" for="form2Example55">Enquiry
-												Status</label> <select id="form2Example55" class="form-select">
-												<option>-Select-</option>
-												<option selected>New</option>
-												<option>Enrolled</option>
-												<option>Lost</option>
+												Status</label> <select id="form2Example55" class="form-select"  th:field="*{enquiryStatus}">
+												<option value="">-Select-</option>
+												<option th:each="status : ${statusNames}" th:value="${status}" th:text="${status}" ></option>
+												
 											</select>
 										</div>
 
 										<div class="text-center pt-1 mb-5 pb-1">
-											<button
+											<input type="submit"
 												class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-												type="button">Submit</button>
+												value="Submit" />
 										</div>
 
 

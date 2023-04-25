@@ -10,7 +10,7 @@ public class EnquiryForm {
 	private String classMode;
 	private String courseName;
 	private String enquiryStatus;
-	private String enquiryDare;
+	
 	
 
 }

@@ -8,13 +8,13 @@ import com.klinnovations.binding.EnquirySearchCriteria;
 
 public interface EnquiryService {
 	
-	public List<String> getCourseName();
-	
-	public List<String> enquiryStatus();
-	
 	public DashBoardResponse getDashBoardData(Integer userId);
 	
-	public String addenquiry(EnquiryForm form);
+    public List<String> getCourses();
+	
+	public List<String> getEnquiryStatuses();
+	
+	public boolean saveEnquiry(EnquiryForm form);
 	
 	public List<EnquiryForm> getEnquiries(Integer userId, EnquirySearchCriteria criteria); 
 	

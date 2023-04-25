@@ -14,7 +14,7 @@ import lombok.Data;
 public class Courses {
 	
 	@Id
-	
+	@GeneratedValue
 	private Integer courseId;
 	private String courseName;
 	

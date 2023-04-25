@@ -57,9 +57,9 @@
 										<h4 class="mt-1 mb-5 pb-1">Your Performance</h4>
 									</div>
 
-									<h2>Total Enquiries : 256 </h2>
-									<h2 class="text-success">Enrolled : 84 </h2>
-									<h2 class="text-danger">Lost : 172</h2>
+									<h2>Total Enquiries :<p th:text="${dashboardData.totalEnquiriesCount}"/></h2>
+									<h2 class="text-success">Enrolled : <p th:text="${dashboardData.entrolledCount}"/></h2>
+									<h2 class="text-danger">Lost : <p th:text="${dashboardData.lostCount}"/></h2>
 
 								</div>
 							</div>

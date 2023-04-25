@@ -14,6 +14,7 @@ import lombok.Data;
 public class EnquiryStatus {
 
 	@Id
+	@GeneratedValue
 	private Integer statusId;
 	private String statusName;
 }
